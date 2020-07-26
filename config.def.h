@@ -5,12 +5,12 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=12", "fontawesome:size12" };
-static const char dmenufont[]       = "monospace:size=12";
+static const char *fonts[]          = { "monospace:size=10", "fontawesome:size10" };
+static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#282a36"; /* background color */
 static const char col_gray2[]       = "#6272a4"; /* inactive window border color */
 static const char col_gray3[]       = "#f8f8f2"; /* font color */
-static const char col_gray4[]       = "#f8f8f2"; /* current tag and current window font color */
+static const char col_gray4[]       = "#282a36"; /* current tag and current window font color */
 static const char col_cyan[]        = "#bd93f9"; /* Top bar second color and active window border color */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
