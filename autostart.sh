@@ -15,6 +15,9 @@ blueman-tray &
 # Network Manager Applet
 nm-applet &
 
+# Deadd Notification Center
+deadd-notification-center &
+
 #####################
 # Cloud Drive Rsync #
 #####################
