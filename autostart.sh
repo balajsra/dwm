@@ -9,6 +9,9 @@ volctl &
 # Nyrna
 nyrna &
 
+# Blueman
+blueman-tray &
+
 #####################
 # Cloud Drive Rsync #
 #####################
