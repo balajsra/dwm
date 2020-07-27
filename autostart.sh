@@ -17,3 +17,8 @@ do
     rclone --vfs-cache-mode writes mount "$i": "$local_path" &
 done
 
+############################
+# System Tray Applications #
+############################
+# PulseAudio volume control
+volctl

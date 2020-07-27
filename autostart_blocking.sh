@@ -8,4 +8,3 @@ nitrogen --restore &
 
 # Blue light filter (Farmington Hills, MI)
 redshift -l 42.48531:-83.37716 &
-
