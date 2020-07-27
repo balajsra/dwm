@@ -1,5 +1,17 @@
 #!/bin/bash
 
+############################
+# System Tray Applications #
+############################
+# PulseAudio volume control
+volctl &
+
+# Nyrna
+nyrna &
+
+#####################
+# Cloud Drive Rsync #
+#####################
 # Local cloud storage directory
 local_clone_dir="$HOME/Cloud"
 
@@ -16,9 +28,3 @@ do
     mkdir -p "$local_path"
     rclone --vfs-cache-mode writes mount "$i": "$local_path" &
 done
-
-############################
-# System Tray Applications #
-############################
-# PulseAudio volume control
-volctl
