@@ -12,6 +12,9 @@ nyrna &
 # Blueman
 blueman-tray &
 
+# Network Manager Applet
+nm-applet &
+
 #####################
 # Cloud Drive Rsync #
 #####################
