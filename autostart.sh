@@ -21,6 +21,9 @@ deadd-notification-center &
 # Redshift
 redshift-gtk &
 
+# KDE Connect
+kdeconnect-indicator &
+
 #####################
 # Cloud Drive Rsync #
 #####################
