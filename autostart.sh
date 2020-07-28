@@ -18,6 +18,9 @@ nm-applet &
 # Deadd Notification Center
 deadd-notification-center &
 
+# Redshift
+redshift-gtk &
+
 #####################
 # Cloud Drive Rsync #
 #####################
