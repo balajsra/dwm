@@ -1,34 +1,35 @@
 #!/bin/bash
 
-############################
-# System Tray Applications #
-############################
-# PulseAudio volume control
-volctl &
-
-# Nyrna
-nyrna &
-
-# Blueman
-blueman-tray &
-
-# Network Manager Applet
-nm-applet &
-
-# KDE Connect
-kdeconnect-indicator &
-
 ########################
-# Background Processes #
+# Startup Applications #
 ########################
-# Deadd Notification Center
-deadd-notification-center &
+# List of applications to run on start
+declare -a applications_array=(\
+    # System Tray Applications
+    "volctl" \                      # PulseAudio Volume Control
+    "nyrna" \                       # Nyrna Application Suspend
+    "blueman-tray" \                # Blueman Bluetooth Manager
+    "nm-applet" \                   # Network Manager Applet
+    "kdeconnect-indicator" \        # KDE Connect
+    # Background Processes
+    "deadd-notification-center" \   # Deadd Notification Center
+    "greenclip daemon" \            # Greenclip Clipboard Manager
+    "redshift-gtk" \                # Redshift Blue Light Filter
+    # Hardware Driver Applications
+    "solaar --window=hide" \        # Logitech Mouse Driver
+    "polychromatic-tray-applet" \   # Razer Keyboard Customization
+)
 
-# Greenclip
-greenclip daemon &
-
-# Redshift
-redshift-gtk &
+# Run applications (ignore if they don't exist)
+for i in "${applications_array[@]}"
+do
+    if ! command -v $i > /dev/null
+    then
+        do_nothing() { :; }
+    else
+        $i &
+    fi
+done
 
 #####################
 # Cloud Drive Rsync #
