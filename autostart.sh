@@ -16,6 +16,7 @@ declare -a applications_array=(\
     "greenclip daemon" \                                        # Greenclip Clipboard Manager
     "redshift-gtk" \                                            # Redshift Blue Light Filter
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" # GNOME Polkit Authentication Agent
+    "slstatus" \                                                # slstatus status bar
     # Hardware Driver Applications
     "solaar --window=hide" \                                    # Logitech Mouse Driver
     "polychromatic-tray-applet" \                               # Razer Keyboard Customization
