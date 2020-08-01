@@ -68,6 +68,8 @@ static const char deaddscriptpath[] = "/home/sravan/.config/deadd/open-notificat
 static const char *rofiruncmd[] = { "rofi", "-show", "drun", NULL };
 static const char *roficlipcmd[] = { "rofi", "-show", "clipboard", NULL };
 static const char *deaddcmd[] = { "/bin/bash", deaddscriptpath, NULL };
+static const char *lockcmd[] = { "slock", NULL };
+static const char *sleepcmd[] = { "slock", "systemctl", "suspend", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
@@ -75,6 +77,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      		spawn,          {.v = rofiruncmd } },
 	{ MODKEY,						XK_c,			spawn,          {.v = roficlipcmd } },
 	{ MODKEY|ShiftMask,				XK_n,			spawn,          {.v = deaddcmd } },
+	{ MODKEY|ShiftMask,				XK_l,			spawn,          {.v = lockcmd } },
+	{ MODKEY|ShiftMask,				XK_s,			spawn,          {.v = sleepcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, 		spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      		togglebar,      {0} },
 	{ MODKEY,                       XK_j,      		focusstack,     {.i = +1 } },
