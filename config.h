@@ -57,15 +57,21 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
+/* configuration parameters */
+static const char rootdir[] = "/home/sravan/.config"; /* Location of dwm source code */
+static const char deaddscriptpath[] = "/home/sravan/.config/deadd/open-notification-center.sh";
+
 /* commands */
 static const char *rofiruncmd[] = { "rofi", "-show", "drun", NULL };
 static const char *roficlipcmd[] = { "rofi", "-show", "clipboard", NULL };
+static const char *deaddcmd[] = { "/bin/bash", deaddscriptpath, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        		function        argument */
 	{ MODKEY,                       XK_p,      		spawn,          {.v = rofiruncmd } },
 	{ MODKEY,						XK_c,			spawn,          {.v = roficlipcmd } },
+	{ MODKEY|ShiftMask,				XK_n,			spawn,          {.v = deaddcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, 		spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      		togglebar,      {0} },
 	{ MODKEY,                       XK_j,      		focusstack,     {.i = +1 } },
@@ -116,6 +122,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
-/* configuration parameters */
-static const char rootdir[] = "/home/sravan/.config"; /* Location of dwm source code */
