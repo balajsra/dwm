@@ -15,14 +15,20 @@ blueman-tray &
 # Network Manager Applet
 nm-applet &
 
+# KDE Connect
+kdeconnect-indicator &
+
+########################
+# Background Processes #
+########################
 # Deadd Notification Center
 deadd-notification-center &
 
+# Greenclip
+greenclip daemon &
+
 # Redshift
 redshift-gtk &
-
-# KDE Connect
-kdeconnect-indicator &
 
 #####################
 # Cloud Drive Rsync #
