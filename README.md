@@ -66,3 +66,6 @@ and (re)compiling the source code.
 * [Pulse Audio Volume Control](https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e)
 * Media Play/Pause, Prev, and Next Keybindings via [Playerctl](https://github.com/altdesktop/playerctl)
   * Arch Community Repo: [playerctl](https://www.archlinux.org/packages/community/x86_64/playerctl/)
+* Use [light-locker](https://github.com/the-cavalry/light-locker) to lock screen with [LightDM](https://github.com/canonical/lightdm)
+  * Arch Community Repo: [lightdm](https://www.archlinux.org/packages/extra/x86_64/lightdm/)
+  * Arch Community Repo: [light-locker](https://www.archlinux.org/packages/community/x86_64/light-locker/)

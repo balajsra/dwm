@@ -17,6 +17,7 @@ declare -a applications_array=(\
     "redshift-gtk" \                                            # Redshift Blue Light Filter
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" # GNOME Polkit Authentication Agent
     "slstatus" \                                                # slstatus status bar
+    "light-locker --lock-on-suspend --lock-on-lid" \            # LightDM Locker
     # Hardware Driver Applications
     "solaar --window=hide" \                                    # Logitech Mouse Driver
     "polychromatic-tray-applet" \                               # Razer Keyboard Customization
