@@ -66,15 +66,18 @@ static const char rootdir[] = "/home/sravan/.config"; /* Location of dwm source 
 static const char deaddscriptpath[] = "/home/sravan/.config/deadd/open-notification-center.sh";
 
 /* commands */
-static const char *rofiruncmd[]		= { "rofi", "-show", "drun", NULL };
-static const char *roficlipcmd[]	= { "rofi", "-show", "clipboard", NULL };
-static const char *deaddcmd[]		= { "/bin/bash", deaddscriptpath, NULL };
-static const char *lockcmd[]		= { "slock", NULL };
-static const char *sleepcmd[]		= { "slock", "systemctl", "suspend", NULL };
-static const char *termcmd[]		= { "alacritty", NULL };
-static const char *upvolcmd[]		= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%",     NULL };
-static const char *downvolcmd[]		= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%",     NULL };
-static const char *mutevolcmd[]		= { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
+static const char *rofiruncmd[]			= { "rofi", "-show", "drun",	  NULL };
+static const char *roficlipcmd[]		= { "rofi", "-show", "clipboard", NULL };
+static const char *deaddcmd[]			= { "/bin/bash", deaddscriptpath, NULL };
+static const char *lockcmd[]			= { "slock", NULL };
+static const char *sleepcmd[]			= { "slock", "systemctl", "suspend", NULL };
+static const char *termcmd[]			= { "alacritty", NULL };
+static const char *upvolcmd[]			= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%",     NULL };
+static const char *downvolcmd[]			= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%",     NULL };
+static const char *mutevolcmd[]			= { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
+static const char *playerplaypausecmd[]	= { "playerctl", "--player=playerctld", "play-pause", NULL };
+static const char *playernextcmd[]		= { "playerctl", "--player=playerctld", "next", 	  NULL };
+static const char *playerprevcmd[]		= { "playerctl", "--player=playerctld", "previous",   NULL };
 
 static Key keys[] = {
 	/* modifier				key							function		argument */
@@ -110,6 +113,9 @@ static Key keys[] = {
 	{ 0,					XF86XK_AudioLowerVolume,	spawn,			{.v = downvolcmd} },
 	{ 0,                    XF86XK_AudioMute,			spawn,			{.v = mutevolcmd} },
 	{ 0,                    XF86XK_AudioRaiseVolume,	spawn,			{.v = upvolcmd} },
+	{ 0,					XF86XK_AudioPlay,			spawn,			{.v = playerplaypausecmd} },
+	{ 0,					XF86XK_AudioNext,			spawn,			{.v = playernextcmd} },
+	{ 0,					XF86XK_AudioPrev,			spawn,			{.v = playerprevcmd} },
 	TAGKEYS(                XK_1,                      					0)
 	TAGKEYS(                XK_2,                      					1)
 	TAGKEYS(                XK_3,                      					2)

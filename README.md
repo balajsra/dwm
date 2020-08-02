@@ -63,3 +63,6 @@ and (re)compiling the source code.
 * Increase border to 2 pixels
 * Change tags to be [Font Awesome](https://fontawesome.com) icons
 * Run programs and processes on autostart
+* [Pulse Audio Volume Control](https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e)
+* Media Play/Pause, Prev, and Next Keybindings via [Playerctl](https://github.com/altdesktop/playerctl)
+  * Arch Community Repo: [playerctl](https://www.archlinux.org/packages/community/x86_64/playerctl/)
