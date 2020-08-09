@@ -78,6 +78,7 @@ static const char *mutevolcmd[]			= { "/usr/bin/pactl", "set-sink-mute",   "@DEF
 static const char *playerplaypausecmd[]	= { "playerctl", "--player=playerctld", "play-pause", NULL };
 static const char *playernextcmd[]		= { "playerctl", "--player=playerctld", "next", 	  NULL };
 static const char *playerprevcmd[]		= { "playerctl", "--player=playerctld", "previous",   NULL };
+static const char *flameshotcmd[]		= { "flameshot", "gui",	NULL };
 
 static Key keys[] = {
 	/* modifier				key							function		argument */
@@ -116,6 +117,7 @@ static Key keys[] = {
 	{ 0,					XF86XK_AudioPlay,			spawn,			{.v = playerplaypausecmd} },
 	{ 0,					XF86XK_AudioNext,			spawn,			{.v = playernextcmd} },
 	{ 0,					XF86XK_AudioPrev,			spawn,			{.v = playerprevcmd} },
+	{ 0,					XK_Print,					spawn,			{.v = flameshotcmd} },
 	TAGKEYS(                XK_1,                      					0)
 	TAGKEYS(                XK_2,                      					1)
 	TAGKEYS(                XK_3,                      					2)

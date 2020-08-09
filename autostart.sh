@@ -11,6 +11,7 @@ declare -a applications_array=(\
     "blueman-tray" \                                            # Blueman Bluetooth Manager
     "nm-applet" \                                               # Network Manager Applet
     "kdeconnect-indicator" \                                    # KDE Connect
+    "flameshot" \                                               # Flameshot Screenshot Tool
     # Background Processes
     "deadd-notification-center" \                               # Deadd Notification Center
     "greenclip daemon" \                                        # Greenclip Clipboard Manager
