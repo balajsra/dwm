@@ -5,8 +5,9 @@
 ##############################
 # List of processes to run on start
 declare -a processes_array=(\
-    "picom --config /home/sravan/.config/picom/picom.conf" \    # Start compositor using configuration file
-    "nitrogen --restore" \                                      # Restore wallpaper
+    "picom --config /home/sravan/.config/picom/picom.conf" \        # Start compositor using configuration file
+    "bash /home/sravan/.screenlayout/default-screen-layout.sh" \    # Restore default screen layout
+    "nitrogen --restore" \                                          # Restore wallpaper
 )
 
 # Run processes (ignore if they don't exist)

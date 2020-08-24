@@ -52,5 +52,5 @@ for i in "${remote_array[@]}"
 do
     local_path="$local_clone_dir"/"$i"
     mkdir -p "$local_path"
-    rclone --vfs-cache-mode writes mount "$i": "$local_path" &
+    rclone mount "$i": "$local_path" &
 done
