@@ -54,13 +54,15 @@ and (re)compiling the source code.
 * [combo](https://dwm.suckless.org/patches/combo/)
 * [movestack](https://dwm.suckless.org/patches/movestack/)
 * [systray](https://dwm.suckless.org/patches/systray/)
+* [ru_gaps](https://dwm.suckless.org/patches/ru_gaps/)
 
 ### Modifications
 
 * Change mod key to super key (windows key)
 * Change terminal from st to alacritty
 * Change colors to follow [Dracula](https://draculatheme.com) theme
-* Increase border to 2 pixels
+* Increase border to 3 pixels
+* Set default gap size to 10 pixels
 * Change tags to be [Font Awesome](https://fontawesome.com) icons
 * Run programs and processes on autostart
 * [Pulse Audio Volume Control](https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e)

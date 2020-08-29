@@ -5,7 +5,8 @@
 #include "movestack.c"
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const int gappx				= 10;		/* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -111,6 +112,9 @@ static Key keys[] = {
 	{ MODKEY,               XK_period,					focusmon,       {.i = +1} },
 	{ MODKEY|ShiftMask,     XK_comma,					tagmon,         {.i = -1} },
 	{ MODKEY|ShiftMask,     XK_period, 					tagmon,         {.i = +1} },
+	{ MODKEY,				XK_minus,					setgaps,        {.i = -5 } },
+	{ MODKEY,				XK_equal,					setgaps,        {.i = +5 } },
+	{ MODKEY|ShiftMask,		XK_equal,					setgaps,        {.i = 0  } },
 	{ 0,					XF86XK_AudioLowerVolume,	spawn,			{.v = downvolcmd} },
 	{ 0,                    XF86XK_AudioMute,			spawn,			{.v = mutevolcmd} },
 	{ 0,                    XF86XK_AudioRaiseVolume,	spawn,			{.v = upvolcmd} },
