@@ -51,10 +51,11 @@ and (re)compiling the source code.
 ### Patches
 
 * [autostart](https://dwm.suckless.org/patches/autostart/)
+* [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
 * [combo](https://dwm.suckless.org/patches/combo/)
 * [movestack](https://dwm.suckless.org/patches/movestack/)
-* [systray](https://dwm.suckless.org/patches/systray/)
 * [ru_gaps](https://dwm.suckless.org/patches/ru_gaps/)
+* [systray](https://dwm.suckless.org/patches/systray/)
 
 ### Modifications
 
