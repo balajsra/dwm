@@ -53,6 +53,7 @@ and (re)compiling the source code.
 * [autostart](https://dwm.suckless.org/patches/autostart/)
 * [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
 * [combo](https://dwm.suckless.org/patches/combo/)
+* [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/)
 * [gridmode](https://dwm.suckless.org/patches/gridmode/)
 * [movestack](https://dwm.suckless.org/patches/movestack/)
 * [ru_gaps](https://dwm.suckless.org/patches/ru_gaps/)
