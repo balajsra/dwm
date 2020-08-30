@@ -56,6 +56,7 @@ and (re)compiling the source code.
 * [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/)
 * [gridmode](https://dwm.suckless.org/patches/gridmode/)
 * [movestack](https://dwm.suckless.org/patches/movestack/)
+* [restartsig](https://dwm.suckless.org/patches/restartsig/)
 * [ru_gaps](https://dwm.suckless.org/patches/ru_gaps/)
 * [systray](https://dwm.suckless.org/patches/systray/)
 

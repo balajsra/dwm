@@ -88,61 +88,62 @@ static const char *flameshotcmd[]		= { "flameshot", "gui",	NULL };
 
 /* key definitions */
 static Key keys[] = {
-	/* modifier				key							function		argument */
-	{ MODKEY,				XK_p,						spawn,          {.v = rofiruncmd} },
-	{ MODKEY,				XK_c,						spawn,          {.v = roficlipcmd} },
-	{ MODKEY|ShiftMask,		XK_n,						spawn,          {.v = deaddcmd} },
-	{ MODKEY|ShiftMask,		XK_l,						spawn,          {.v = lockcmd} },
-	{ MODKEY|ShiftMask,		XK_s,						spawn,          {.v = sleepcmd} },
-	{ MODKEY|ShiftMask,		XK_Return,					spawn,          {.v = termcmd} },
-	{ MODKEY,               XK_b,      					togglebar,      {0} },
-	{ MODKEY,               XK_j,      					focusstack,     {.i = +1} },
-	{ MODKEY,               XK_k,      					focusstack,     {.i = -1} },
-	{ MODKEY,               XK_i,      					incnmaster,     {.i = +1} },
-	{ MODKEY,               XK_d,      					incnmaster,     {.i = -1} },
-	{ MODKEY,               XK_h,						setmfact,       {.f = -0.05} },
-	{ MODKEY,               XK_l,						setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,		XK_j,						movestack,      {.i = +1} },
-	{ MODKEY|ShiftMask,		XK_k,						movestack,      {.i = -1} },
-	{ MODKEY,               XK_Return,					zoom,           {0} },
-	{ MODKEY,               XK_Tab,						view,           {0} },
-	{ MODKEY|ShiftMask,     XK_c,						killclient,     {0} },
-	{ MODKEY,               XK_t,						setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,               XK_f,						setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,               XK_m,						setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,				XK_u,						setlayout,		{.v = &layouts[3]} },
-	{ MODKEY,				XK_o,						setlayout,		{.v = &layouts[4]} },
-	{ MODKEY,				XK_g,						setlayout,		{.v = &layouts[5]} },
-	{ MODKEY|ControlMask,	XK_comma,					cyclelayout,	{.i = -1 } },
-	{ MODKEY|ControlMask,	XK_period,					cyclelayout,	{.i = +1 } },
-	{ MODKEY,               XK_space,					setlayout,      {0} },
-	{ MODKEY|ShiftMask,     XK_space,					togglefloating, {0} },
-	{ MODKEY,               XK_0,						view,           {.ui = ~0} },
-	{ MODKEY|ShiftMask,     XK_0,						tag,            {.ui = ~0} },
-	{ MODKEY,               XK_comma,					focusmon,       {.i = -1} },
-	{ MODKEY,               XK_period,					focusmon,       {.i = +1} },
-	{ MODKEY|ShiftMask,     XK_comma,					tagmon,         {.i = -1} },
-	{ MODKEY|ShiftMask,     XK_period, 					tagmon,         {.i = +1} },
-	{ MODKEY,				XK_minus,					setgaps,        {.i = -5 } },
-	{ MODKEY,				XK_equal,					setgaps,        {.i = +5 } },
-	{ MODKEY|ShiftMask,		XK_equal,					setgaps,        {.i = 0  } },
-	{ 0,					XF86XK_AudioLowerVolume,	spawn,			{.v = downvolcmd} },
-	{ 0,                    XF86XK_AudioMute,			spawn,			{.v = mutevolcmd} },
-	{ 0,                    XF86XK_AudioRaiseVolume,	spawn,			{.v = upvolcmd} },
-	{ 0,					XF86XK_AudioPlay,			spawn,			{.v = playerplaypausecmd} },
-	{ 0,					XF86XK_AudioNext,			spawn,			{.v = playernextcmd} },
-	{ 0,					XF86XK_AudioPrev,			spawn,			{.v = playerprevcmd} },
-	{ 0,					XK_Print,					spawn,			{.v = flameshotcmd} },
-	TAGKEYS(                XK_1,                      					0)
-	TAGKEYS(                XK_2,                      					1)
-	TAGKEYS(                XK_3,                      					2)
-	TAGKEYS(                XK_4,                      					3)
-	TAGKEYS(                XK_5,                      					4)
-	TAGKEYS(                XK_6,                      					5)
-	TAGKEYS(                XK_7,                      					6)
-	TAGKEYS(                XK_8,                      					7)
-	TAGKEYS(                XK_9,                      					8)
-	{ MODKEY|ShiftMask,     XK_q,      					quit,			{0} },
+	/* modifier						key							function		argument */
+	{ MODKEY,						XK_p,						spawn,          {.v = rofiruncmd} },
+	{ MODKEY,						XK_c,						spawn,          {.v = roficlipcmd} },
+	{ MODKEY|ShiftMask,				XK_n,						spawn,          {.v = deaddcmd} },
+	{ MODKEY|ShiftMask,				XK_l,						spawn,          {.v = lockcmd} },
+	{ MODKEY|ShiftMask,				XK_s,						spawn,          {.v = sleepcmd} },
+	{ MODKEY|ShiftMask,				XK_Return,					spawn,          {.v = termcmd} },
+	{ MODKEY,           			XK_b,      					togglebar,      {0} },
+	{ MODKEY,           			XK_j,      					focusstack,     {.i = +1} },
+	{ MODKEY,           			XK_k,      					focusstack,     {.i = -1} },
+	{ MODKEY,           			XK_i,      					incnmaster,     {.i = +1} },
+	{ MODKEY,           			XK_d,      					incnmaster,     {.i = -1} },
+	{ MODKEY,           			XK_h,						setmfact,       {.f = -0.05} },
+	{ MODKEY,           			XK_l,						setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,				XK_j,						movestack,      {.i = +1} },
+	{ MODKEY|ShiftMask,				XK_k,						movestack,      {.i = -1} },
+	{ MODKEY,           			XK_Return,					zoom,           {0} },
+	{ MODKEY,           			XK_Tab,						view,           {0} },
+	{ MODKEY|ShiftMask, 			XK_c,						killclient,     {0} },
+	{ MODKEY,           			XK_t,						setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,           			XK_f,						setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,           			XK_m,						setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,						XK_u,						setlayout,		{.v = &layouts[3]} },
+	{ MODKEY,						XK_o,						setlayout,		{.v = &layouts[4]} },
+	{ MODKEY,						XK_g,						setlayout,		{.v = &layouts[5]} },
+	{ MODKEY|ControlMask,			XK_comma,					cyclelayout,	{.i = -1 } },
+	{ MODKEY|ControlMask,			XK_period,					cyclelayout,	{.i = +1 } },
+	{ MODKEY,           			XK_space,					setlayout,      {0} },
+	{ MODKEY|ShiftMask, 			XK_space,					togglefloating, {0} },
+	{ MODKEY,           			XK_0,						view,           {.ui = ~0} },
+	{ MODKEY|ShiftMask, 			XK_0,						tag,            {.ui = ~0} },
+	{ MODKEY,           			XK_comma,					focusmon,       {.i = -1} },
+	{ MODKEY,           			XK_period,					focusmon,       {.i = +1} },
+	{ MODKEY|ShiftMask, 			XK_comma,					tagmon,         {.i = -1} },
+	{ MODKEY|ShiftMask, 			XK_period, 					tagmon,         {.i = +1} },
+	{ MODKEY,						XK_minus,					setgaps,        {.i = -5 } },
+	{ MODKEY,						XK_equal,					setgaps,        {.i = +5 } },
+	{ MODKEY|ShiftMask,				XK_equal,					setgaps,        {.i = 0  } },
+	{ 0,							XF86XK_AudioLowerVolume,	spawn,			{.v = downvolcmd} },
+	{ 0,                			XF86XK_AudioMute,			spawn,			{.v = mutevolcmd} },
+	{ 0,                			XF86XK_AudioRaiseVolume,	spawn,			{.v = upvolcmd} },
+	{ 0,							XF86XK_AudioPlay,			spawn,			{.v = playerplaypausecmd} },
+	{ 0,							XF86XK_AudioNext,			spawn,			{.v = playernextcmd} },
+	{ 0,							XF86XK_AudioPrev,			spawn,			{.v = playerprevcmd} },
+	{ 0,							XK_Print,					spawn,			{.v = flameshotcmd} },
+	TAGKEYS(            			XK_1,                      					0)
+	TAGKEYS(            			XK_2,                      					1)
+	TAGKEYS(            			XK_3,                      					2)
+	TAGKEYS(            			XK_4,                      					3)
+	TAGKEYS(            			XK_5,                      					4)
+	TAGKEYS(            			XK_6,                      					5)
+	TAGKEYS(            			XK_7,                      					6)
+	TAGKEYS(            			XK_8,                      					7)
+	TAGKEYS(            			XK_9,                      					8)
+	{ MODKEY|ShiftMask, 			XK_q,      					quit,			{0} },
+	{ MODKEY|ControlMask|ShiftMask,	XK_q,      					quit,           {1} },
 };
 
 /* button definitions */
