@@ -5,23 +5,27 @@
 ########################
 # List of applications to run on start
 declare -a applications_array=(\
+    # System Restore Processes
+    "bash /home/sravan/.screenlayout/default-screen-layout.sh" \    # Restore default screen layout
+    "nitrogen --restore" \                                          # Restore wallpaper
     # System Tray Applications
-    "volctl" \                                                  # PulseAudio Volume Control
-    "nyrna" \                                                   # Nyrna Application Suspend
-    "blueman-tray" \                                            # Blueman Bluetooth Manager
-    "nm-applet" \                                               # Network Manager Applet
-    "kdeconnect-indicator" \                                    # KDE Connect
-    "flameshot" \                                               # Flameshot Screenshot Tool
+    "volctl" \                                                      # PulseAudio Volume Control
+    "nyrna" \                                                       # Nyrna Application Suspend
+    "blueman-tray" \                                                # Blueman Bluetooth Manager
+    "nm-applet" \                                                   # Network Manager Applet
+    "kdeconnect-indicator" \                                        # KDE Connect
+    "flameshot" \                                                   # Flameshot Screenshot Tool
     # Background Processes
-    "deadd-notification-center" \                               # Deadd Notification Center
-    "greenclip daemon" \                                        # Greenclip Clipboard Manager
-    "redshift-gtk" \                                            # Redshift Blue Light Filter
-    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" # GNOME Polkit Authentication Agent
-    "slstatus" \                                                # slstatus status bar
-    "light-locker --lock-on-suspend --lock-on-lid" \            # LightDM Locker
+    "picom --config /home/sravan/.config/picom/picom.conf" \        # Picom Compositor
+    "deadd-notification-center" \                                   # Deadd Notification Center
+    "greenclip daemon" \                                            # Greenclip Clipboard Manager
+    "redshift-gtk" \                                                # Redshift Blue Light Filter
+    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" \   # GNOME Polkit Authentication Agent
+    "slstatus" \                                                    # slstatus status bar
+    "light-locker --lock-on-suspend --lock-on-lid" \                # LightDM Locker
     # Hardware Driver Applications
-    "solaar --window=hide" \                                    # Logitech Mouse Driver
-    "polychromatic-tray-applet" \                               # Razer Keyboard Customization
+    "solaar --window=hide" \                                        # Logitech Mouse Driver
+    "polychromatic-tray-applet" \                                   # Razer Keyboard Customization
 )
 
 # Run applications (ignore if they don't exist)

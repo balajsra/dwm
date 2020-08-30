@@ -226,6 +226,7 @@ static void resizerequest(XEvent *e);
 static void restack(Monitor *m);
 static void run(void);
 static void runautostart(void);
+static void runautoquit(void);
 static void scan(void);
 static int sendevent(Window w, Atom proto, int m, long d0, long d1, long d2, long d3, long d4);
 static void sendmon(Client *c, Monitor *m);
@@ -283,6 +284,8 @@ static void comboview(const Arg *arg);
 /* variables */
 static const char autostartblocksh[] = "autostart_blocking.sh";
 static const char autostartsh[] = "autostart.sh";
+static const char autoquitblocksh[] = "autoquit_blocking.sh";
+static const char autoquitsh[] = "autoquit.sh";
 static Systray *systray =  NULL;
 static const char broken[] = "broken";
 static const char dwmdir[] = "dwm";
@@ -1675,6 +1678,53 @@ runautostart(void)
 }
 
 void
+runautoquit(void)
+{
+	char *pathpfx;
+	char *path;
+	struct stat sb;
+
+	if (dwmdir != NULL && *dwmdir != '\0') {
+		/* space for path segments, separators and nul */
+		pathpfx = ecalloc(1, strlen(rootdir) + strlen(dwmdir) + 2);
+
+		if (sprintf(pathpfx, "%s/%s", rootdir, dwmdir) <= 0) {
+			free(pathpfx);
+			return;
+		}
+	}
+
+	/* check if the autoquit script directory exists */
+	if (! (stat(pathpfx, &sb) == 0 && S_ISDIR(sb.st_mode))) {
+		/* the specified dwm root directory does not exist or is not a directory */
+		free(pathpfx);
+		return;
+	}
+
+	/* try the blocking script first */
+	path = ecalloc(1, strlen(pathpfx) + strlen(autoquitblocksh) + 2);
+	if (sprintf(path, "%s/%s", pathpfx, autoquitblocksh) <= 0) {
+		free(path);
+		free(pathpfx);
+	}
+
+	if (access(path, X_OK) == 0)
+		system(path);
+
+	/* now the non-blocking script */
+	if (sprintf(path, "%s/%s", pathpfx, autoquitsh) <= 0) {
+		free(path);
+		free(pathpfx);
+	}
+
+	if (access(path, X_OK) == 0)
+		system(strcat(path, " &"));
+
+	free(pathpfx);
+	free(path);
+}
+
+void
 scan(void)
 {
 	unsigned int i, num;
@@ -2640,6 +2690,7 @@ main(int argc, char *argv[])
 	scan();
 	runautostart();
 	run();
+	runautoquit();
 	cleanup();
 	XCloseDisplay(dpy);
 	return EXIT_SUCCESS;
