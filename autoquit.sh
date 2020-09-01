@@ -23,6 +23,7 @@ declare -a applications_array=(\
     # Hardware Driver Applications
     "solaar" \          # Logitech Mouse Driver
     "polychromatic-t" \ # Razer Keyboard Customization
+    "optimus-manager" \ # Optimus Manager Qt
 )
 
 # Kill applications

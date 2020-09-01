@@ -26,6 +26,7 @@ declare -a applications_array=(\
     # Hardware Driver Applications
     "solaar --window=hide" \                                        # Logitech Mouse Driver
     "polychromatic-tray-applet" \                                   # Razer Keyboard Customization
+    "optimus-manager-qt" \                                          # Optimus Manager Qt
 )
 
 # Run applications (ignore if they don't exist)
