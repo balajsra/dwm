@@ -12,11 +12,12 @@ declare -a applications_array=(\
     "nm-applet" \       # Network Manager Applet
     "kdeconnect-indi" \ # KDE Connect
     "flameshot" \       # Flameshot Screenshot Tool
+    "redshift-gtk" \    # Redshift Blue Light Filter
     # Background Processes
     "picom" \           # Picom Compositor
     "deadd-notificat" \ # Deadd Notification Center
     "greenclip" \       # Greenclip Clipboard Manager
-    "redshift-gtk" \    # Redshift Blue Light Filter
+    "redshift" \        # Redshift Blue Light Filter
     "polkit-gnome-au" \ # GNOME Polkit Authentication Agent
     "slstatus" \        # slstatus status bar
     "light-locker" \    # LightDM Locker

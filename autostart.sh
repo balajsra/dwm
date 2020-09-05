@@ -19,6 +19,7 @@ declare -a applications_array=(\
     "picom --config /home/sravan/.config/picom/picom.conf" \        # Picom Compositor
     "deadd-notification-center" \                                   # Deadd Notification Center
     "greenclip daemon" \                                            # Greenclip Clipboard Manager
+    "redshift -x" \                                                 # Reset redshift display gamma
     "redshift-gtk" \                                                # Redshift Blue Light Filter
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" \   # GNOME Polkit Authentication Agent
     "slstatus" \                                                    # slstatus status bar
