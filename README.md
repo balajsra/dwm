@@ -75,3 +75,5 @@ and (re)compiling the source code.
 * Use [light-locker](https://github.com/the-cavalry/light-locker) to lock screen with [LightDM](https://github.com/canonical/lightdm)
   * Arch Community Repo: [lightdm](https://www.archlinux.org/packages/extra/x86_64/lightdm/)
   * Arch Community Repo: [light-locker](https://www.archlinux.org/packages/community/x86_64/light-locker/)
+* Brightness Increase and Decrease Keybindings via [acpilight](https://gitlab.com/wavexx/acpilight)
+  * Arch Community Repo: [acpilight](https://www.archlinux.org/packages/community/any/acpilight/)

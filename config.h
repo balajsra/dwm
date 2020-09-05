@@ -81,6 +81,8 @@ static const char *termcmd[]			= { "alacritty", NULL };
 static const char *upvolcmd[]			= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%",     NULL };
 static const char *downvolcmd[]			= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%",     NULL };
 static const char *mutevolcmd[]			= { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
+static const char *brightness_up[]		= { "xbacklight", "-inc", "1", NULL };
+static const char *brightness_down[]	= { "xbacklight", "-dec", "1", NULL };
 static const char *playerplaypausecmd[]	= { "playerctl", "--player=playerctld", "play-pause", NULL };
 static const char *playernextcmd[]		= { "playerctl", "--player=playerctld", "next", 	  NULL };
 static const char *playerprevcmd[]		= { "playerctl", "--player=playerctld", "previous",   NULL };
@@ -129,6 +131,8 @@ static Key keys[] = {
 	{ 0,							XF86XK_AudioLowerVolume,	spawn,			{.v = downvolcmd} },
 	{ 0,                			XF86XK_AudioMute,			spawn,			{.v = mutevolcmd} },
 	{ 0,                			XF86XK_AudioRaiseVolume,	spawn,			{.v = upvolcmd} },
+	{ 0, 							XF86XK_MonBrightnessUp,		spawn,			{.v = brightness_up} },
+	{ 0, 							XF86XK_MonBrightnessDown,	spawn,			{.v = brightness_down} },
 	{ 0,							XF86XK_AudioPlay,			spawn,			{.v = playerplaypausecmd} },
 	{ 0,							XF86XK_AudioNext,			spawn,			{.v = playernextcmd} },
 	{ 0,							XF86XK_AudioPrev,			spawn,			{.v = playerprevcmd} },
