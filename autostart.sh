@@ -17,7 +17,7 @@ declare -a applications_array=(\
     "flameshot" \                                                   # Flameshot Screenshot Tool
     # Background Processes
     "picom --config /home/sravan/.config/picom/picom.conf" \        # Picom Compositor
-    "deadd-notification-center" \                                   # Deadd Notification Center
+    "/usr/lib/xfce4/notifyd/xfce4-notifyd" \                        # Xfce Notification Daemon
     "greenclip daemon" \                                            # Greenclip Clipboard Manager
     "redshift -x" \                                                 # Reset redshift display gamma
     "redshift-gtk" \                                                # Redshift Blue Light Filter

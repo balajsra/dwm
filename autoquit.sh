@@ -15,7 +15,7 @@ declare -a applications_array=(\
     "redshift-gtk" \    # Redshift Blue Light Filter
     # Background Processes
     "picom" \           # Picom Compositor
-    "deadd-notificat" \ # Deadd Notification Center
+    "xfce4-notifyd" \   # Xfce Notification Daemon
     "greenclip" \       # Greenclip Clipboard Manager
     "redshift" \        # Redshift Blue Light Filter
     "polkit-gnome-au" \ # GNOME Polkit Authentication Agent

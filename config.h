@@ -70,12 +70,10 @@ static const Layout layouts[] = {
 
 /* configuration parameters */
 static const char rootdir[] = "/home/sravan/.config"; /* Location of dwm source code */
-static const char deaddscriptpath[] = "/home/sravan/.config/deadd/open-notification-center.sh";
 
 /* commands */
 static const char *rofiruncmd[]			= { "rofi", "-show", "drun",	  NULL };
 static const char *roficlipcmd[]		= { "rofi", "-show", "clipboard", NULL };
-static const char *deaddcmd[]			= { "/bin/bash", deaddscriptpath, NULL };
 static const char *lockcmd[]			= { "light-locker-command", "--lock",  NULL };
 static const char *sleepcmd[]			= { "systemctl",			"suspend", NULL };
 static const char *termcmd[]			= { "alacritty", NULL };
@@ -94,7 +92,6 @@ static Key keys[] = {
 	/* modifier						key							function		argument */
 	{ MODKEY,						XK_p,						spawn,          {.v = rofiruncmd} },
 	{ MODKEY,						XK_c,						spawn,          {.v = roficlipcmd} },
-	{ MODKEY|ShiftMask,				XK_n,						spawn,          {.v = deaddcmd} },
 	{ MODKEY|ShiftMask,				XK_l,						spawn,          {.v = lockcmd} },
 	{ MODKEY|ShiftMask,				XK_s,						spawn,          {.v = sleepcmd} },
 	{ MODKEY|ShiftMask,				XK_Return,					spawn,          {.v = termcmd} },
