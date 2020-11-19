@@ -6,8 +6,8 @@
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const int gappx				= 10;		/* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const int gappx				= 15;		/* gaps between windows */
+static const unsigned int snap      = 10;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
@@ -16,7 +16,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "NotoSans Nerd Font:size=10" };
 static const char col_gray1[]       = "#282a36"; /* background color */
-static const char col_gray2[]       = "#6272a4"; /* inactive window border color */
+static const char col_gray2[]       = "#44475a"; /* inactive window border color */
 static const char col_gray3[]       = "#f8f8f2"; /* font color */
 static const char col_gray4[]       = "#282a36"; /* current tag and current window font color */
 static const char col_cyan[]        = "#bd93f9"; /* Top bar second color and active window border color */
@@ -35,8 +35,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "origin",	  NULL,		  NULL,		  0,			1,			 -1 },
 };
 
