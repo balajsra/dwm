@@ -1,0 +1,5 @@
+# DWM Files
+*.o
+*.orig
+dwm
+config.h
