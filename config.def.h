@@ -17,15 +17,16 @@ static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
 static const char *alttrayname      = "tray";    /* Polybar tray instance name */
 static const char *altbarcmd        = "$HOME/bar.sh"; /* Alternate bar launch command */
 static const char *fonts[]          = { "NotoSans Nerd Font:size=10" };
-static const char col_gray1[]       = "#282a36"; /* background color */
-static const char col_gray2[]       = "#44475a"; /* inactive window border color */
-static const char col_gray3[]       = "#f8f8f2"; /* font color */
-static const char col_gray4[]       = "#282a36"; /* current tag and current window font color */
-static const char col_cyan[]        = "#bd93f9"; /* Top bar second color and active window border color */
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+static char normbgcolor[]           = "#222222"; /* background color */
+static char normbordercolor[]       = "#444444"; /* inactive window border color */
+static char normfgcolor[]           = "#bbbbbb"; /* font color */
+static char selfgcolor[]            = "#eeeeee"; /* current tag and current window font color */
+static char selbordercolor[]        = "#005577"; /* Top bar second color and active window border color */
+static char selbgcolor[]            = "#005577"; /* Top bar second color and active window border color */
+static char *colors[][3] = {
+       /*               fg           bg           border   */
+       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
 static const char *const autostart[] = {
@@ -124,6 +125,25 @@ static const char *playerplaypausecmd[]	= { "playerctl", "--player=playerctld", 
 static const char *playernextcmd[]		= { "playerctl", "--player=playerctld", "next", 	  NULL };
 static const char *playerprevcmd[]		= { "playerctl", "--player=playerctld", "previous",   NULL };
 static const char *flameshotcmd[]		= { "flameshot", "gui",	NULL };
+
+/*
+ * Xresources preferences to load at startup
+ */
+ResourcePref resources[] = {
+		{ "normbgcolor",        STRING,  &normbgcolor },
+		{ "normbordercolor",    STRING,  &normbordercolor },
+		{ "normfgcolor",        STRING,  &normfgcolor },
+		{ "selbgcolor",         STRING,  &selbgcolor },
+		{ "selbordercolor",     STRING,  &selbordercolor },
+		{ "selfgcolor",         STRING,  &selfgcolor },
+		// { "borderpx",          	INTEGER, &borderpx },
+		// { "snap",          		INTEGER, &snap },
+		// { "showbar",          	INTEGER, &showbar },
+		// { "topbar",          	INTEGER, &topbar },
+		// { "nmaster",          	INTEGER, &nmaster },
+		// { "resizehints",       	INTEGER, &resizehints },
+		// { "mfact",      	 	FLOAT,   &mfact },
+};
 
 #include "movestack.c"
 #include "unfloat.c"
