@@ -66,6 +66,7 @@ Most patches can be found on the suckless website: [https://dwm.suckless.org/pat
 * [cfacts-vanitygaps](https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.2.diff) - Vanity gaps patch compatible with cfacts patch
 * [combo](https://dwm.suckless.org/patches/combo/) - Select multiple tags for tag or view by pressing all the right keys as a combo
 * [cool autostart](https://dwm.suckless.org/patches/cool_autostart/) - Execute commands from `autostart` array in `config.h` on startup and kill processes upon dwm exit
+* [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/) - Cycle through all available layouts
 * [fixborders](https://dwm.suckless.org/patches/alpha/) - Make borders opaque
 * [movestack](https://dwm.suckless.org/patches/movestack/) - Move clients around in the stack and swap them with the master
 * [noborder](https://dwm.suckless.org/patches/noborder/) (Floating Fix) - Remove the border when there is only one window visible
