@@ -1,6 +1,6 @@
 # dwm - dynamic window manager
 
-Sravan's custom build of dwm. Original dwm build by suckless team found here: [https://dwm.suckless.org](https://dwm.suckless.org)
+Sravan's custom build of dwm. Original dwm build by suckless team found here: [https://dwm.suckless.org/](https://dwm.suckless.org/)
 
 ## Requirements
 
@@ -50,3 +50,9 @@ exec dwm
 
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+## Patches
+
+Most patches can be found on the suckless website: [https://dwm.suckless.org/patches/]
+
+* [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/) - Actually toggle fullscreen for a window, instead of toggling the status bar and the monocle layout
