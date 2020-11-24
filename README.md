@@ -56,4 +56,5 @@ and (re)compiling the source code.
 Most patches can be found on the suckless website: [https://dwm.suckless.org/patches/]
 
 * [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/) - Actually toggle fullscreen for a window, instead of toggling the status bar and the monocle layout
+* [alwaysfullscreen](https://dwm.suckless.org/patches/alwaysfullscreen/) - Do not allow the focus to drift from the active fullscreen client when using focusstack()
 * [fixborders](https://dwm.suckless.org/patches/alpha/) - Make borders opaque
