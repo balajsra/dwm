@@ -71,9 +71,9 @@ static const Layout layouts[] = {
 /* key definitions */
 #define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|ShiftMask,             KEY,      combotag,       {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -115,7 +115,7 @@ static Key keys[] = {
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,           {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,           {0} },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,          {0} },
-	{ MODKEY,                       XK_Tab,    view,                 {0} },
+	{ MODKEY,                       XK_Tab,    comboview,            {0} },
 	{ MODKEY|ShiftMask,             XK_j,      aspectresize,         {.i = +24} },
 	{ MODKEY|ShiftMask,             XK_k,      aspectresize,         {.i = -24} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,           {0} },
@@ -126,8 +126,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating,       {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,        {0} },
 	{ MODKEY,                       XK_Tab,    toggleAttachBelow,    {0} },
-	{ MODKEY,                       XK_0,      view,                 {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,                  {.ui = ~0 } },
+	{ MODKEY,                       XK_0,      comboview,            {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,      combotag,             {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,             {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,             {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,               {.i = -1 } },
@@ -155,9 +155,9 @@ static Button buttons[] = {
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-	{ ClkTagBar,            0,              Button1,        view,           {0} },
+	{ ClkTagBar,            0,              Button1,        comboview,      {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
-	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
+	{ ClkTagBar,            MODKEY,         Button1,        combotag,       {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
 

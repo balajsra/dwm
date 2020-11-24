@@ -64,4 +64,5 @@ Most patches can be found on the suckless website: [https://dwm.suckless.org/pat
 * [center](https://dwm.suckless.org/patches/center/) - Add an `iscentered` rule to automatically center clients on the current monitor
 * [cfacts](https://dwm.suckless.org/patches/cfacts/) - Assign different weights to clients in their respective stack in tiled layout
 * [cfacts-vanitygaps](https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.2.diff) - Vanity gaps patch compatible with cfacts patch
+* [combo](https://dwm.suckless.org/patches/combo/) - Select multiple tags for tag or view by pressing all the right keys as a combo
 * [fixborders](https://dwm.suckless.org/patches/alpha/) - Make borders opaque
