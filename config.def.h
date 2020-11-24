@@ -126,6 +126,7 @@ static const char *playerprevcmd[]		= { "playerctl", "--player=playerctld", "pre
 static const char *flameshotcmd[]		= { "flameshot", "gui",	NULL };
 
 #include "movestack.c"
+#include "unfloat.c"
 #include <X11/XF86keysym.h>
 static Key keys[] = {
 	/* modifier                     key                         function              argument */
@@ -168,9 +169,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_k,                       aspectresize,         {.i = -24} },
 	{ MODKEY|ShiftMask,             XK_c,                       killclient,           {0} },
 	{ MODKEY,                       XK_t,                       setlayout,            {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_t,                       unfloatvisible,       {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,                       setlayout,            {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_f,                       unfloatvisible,       {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,                       setlayout,            {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,                   setlayout,            {0} },
+	{ MODKEY|ShiftMask,             XK_m,                       unfloatvisible,       {.v = &layouts[2]} },
+	// { MODKEY,                       XK_space,                   setlayout,            {0} },
+	{ MODKEY|ShiftMask,             XK_space,                   unfloatvisible,       {0} },
 	{ MODKEY|ShiftMask,             XK_space,                   togglefloating,       {0} },
 	{ MODKEY|ShiftMask,             XK_f,                       togglefullscr,        {0} },
 	{ MODKEY,                       XK_Tab,                     toggleAttachBelow,    {0} },

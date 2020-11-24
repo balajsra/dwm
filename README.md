@@ -70,3 +70,4 @@ Most patches can be found on the suckless website: [https://dwm.suckless.org/pat
 * [movestack](https://dwm.suckless.org/patches/movestack/) - Move clients around in the stack and swap them with the master
 * [noborder](https://dwm.suckless.org/patches/noborder/) (Floating Fix) - Remove the border when there is only one window visible
 * [swallow](https://dwm.suckless.org/patches/swallow/) - Programs opened from terminal will "swallow" the terminal
+* [unfloatvisible](https://dwm.suckless.org/patches/unfloatvisible/) - Resets `isfloating` on any visible windows that have it set
