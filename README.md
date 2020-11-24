@@ -62,4 +62,5 @@ Most patches can be found on the suckless website: [https://dwm.suckless.org/pat
 * [attachbelow](https://dwm.suckless.org/patches/attachbelow/) (Toggleable) - Make new clients attach below the selected client, instead of always becoming the new master
 * [autoresize](https://dwm.suckless.org/patches/autoresize/) - Windows that are not visible when requesting a resize/move will get resized/moved
 * [center](https://dwm.suckless.org/patches/center/) - Add an `iscentered` rule to automatically center clients on the current monitor
+* [cfacts](https://dwm.suckless.org/patches/cfacts/) - Assign different weights to clients in their respective stack in tiled layout
 * [fixborders](https://dwm.suckless.org/patches/alpha/) - Make borders opaque
