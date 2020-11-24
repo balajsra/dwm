@@ -65,4 +65,5 @@ Most patches can be found on the suckless website: [https://dwm.suckless.org/pat
 * [cfacts](https://dwm.suckless.org/patches/cfacts/) - Assign different weights to clients in their respective stack in tiled layout
 * [cfacts-vanitygaps](https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.2.diff) - Vanity gaps patch compatible with cfacts patch
 * [combo](https://dwm.suckless.org/patches/combo/) - Select multiple tags for tag or view by pressing all the right keys as a combo
+* [cool autostart](https://dwm.suckless.org/patches/cool_autostart/) - Execute commands from `autostart` array in `config.h` on startup and kill processes upon dwm exit
 * [fixborders](https://dwm.suckless.org/patches/alpha/) - Make borders opaque

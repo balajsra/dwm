@@ -27,6 +27,34 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
+static const char *const autostart[] = {
+	// System Restore Processes
+    "bash", "/home/sravan/.screenlayout/default-screen-layout.sh", NULL, // Restore default screen layout
+    "nitrogen", "--restore", NULL,                                       // Restore wallpaper
+    // System Tray Applications
+    "volctl", NULL,                                                      // PulseAudio Volume Control
+    "nyrna", NULL,                                                       // Nyrna Application Suspend
+    "blueman-tray", NULL,                                                // Blueman Bluetooth Manager
+    "nm-applet", NULL,                                                   // Network Manager Applet
+    "kdeconnect-indicator", NULL,                                        // KDE Connect
+    "flameshot", NULL,                                                   // Flameshot Screenshot Tool
+	"xfce4-power-manager", NULL,                                         // XFCE4 Power Manager
+    // Background Processes
+    "picom", "--config", "/home/sravan/.config/picom/picom.conf", NULL,  // Picom Compositor
+    "/usr/lib/xfce4/notifyd/xfce4-notifyd", NULL,                        // Xfce Notification Daemon
+    "greenclip", "daemon", NULL,                                         // Greenclip Clipboard Manager
+    "redshift", "-x", NULL,                                              // Reset redshift display gamma
+    "redshift-gtk", NULL,                                                // Redshift Blue Light Filter
+    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,   // GNOME Polkit Authentication Agent
+    "slstatus", NULL,                                                    // slstatus status bar
+    "light-locker", "--lock-on-suspend", "--lock-on-lid", NULL,          // LightDM Locker
+    // Hardware Driver Applications
+    "solaar", "--window=hide", NULL,                                     // Logitech Mouse Driver
+    "polychromatic-tray-applet", NULL,                                   // Razer Keyboard Customization
+    "optimus-manager-qt", NULL,                                          // Optimus Manager Qt
+	NULL /* terminate */
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
