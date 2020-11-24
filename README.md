@@ -73,3 +73,4 @@ Most patches can be found on the suckless website: [https://dwm.suckless.org/pat
 * [swallow](https://dwm.suckless.org/patches/swallow/) - Programs opened from terminal will "swallow" the terminal
 * [unfloatvisible](https://dwm.suckless.org/patches/unfloatvisible/) - Resets `isfloating` on any visible windows that have it set
 * [xresources](https://dwm.suckless.org/patches/xresources/) - Allows dwm settings (e.g. colors) to be set in Xresources
+* [dwm-ipc](https://github.com/mihirlad55/dwm-ipc) - Allows third party programs (e.g. polybar) to query window manager for information
