@@ -15,7 +15,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
 static const char *alttrayname      = "tray";    /* Polybar tray instance name */
-static const char *altbarcmd        = "$HOME/.config/dwm/polybar/launch-polybar.sh"; /* Alternate bar launch command */
+static const char *altbarcmd        = "$HOME/.config/polybar/launch.sh"; /* Alternate bar launch command */
 static const char *fonts[]          = { "NotoSans Nerd Font:size=10" };
 static char normbgcolor[]           = "#222222"; /* background color */
 static char normbordercolor[]       = "#444444"; /* inactive window border color */
@@ -48,7 +48,6 @@ static const char *const autostart[] = {
     "redshift", "-x", NULL,                                              // Reset redshift display gamma
     "redshift-gtk", NULL,                                                // Redshift Blue Light Filter
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,   // GNOME Polkit Authentication Agent
-    "slstatus", NULL,                                                    // slstatus status bar
     "light-locker", "--lock-on-suspend", "--lock-on-lid", NULL,          // LightDM Locker
     // Hardware Driver Applications
     "solaar", "--window=hide", NULL,                                     // Logitech Mouse Driver

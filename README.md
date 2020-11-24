@@ -1,6 +1,7 @@
 # dwm - dynamic window manager
 
 Sravan's custom build of dwm. Original dwm build by suckless team found here: [https://dwm.suckless.org/](https://dwm.suckless.org/)
+Choice of patches heavily inspired by [Palmdrop's custom build of dwm](https://github.com/palmdrop/dwm).
 
 ## Requirements
 
@@ -77,7 +78,8 @@ Most patches can be found on the suckless website: [https://dwm.suckless.org/pat
 
 ## Polybar
 
-I am using polybar for the status bar. In dwm, this requires a modified version.
+The anybar and ipc patches above allow dwm to use an external status bar.
+I am using polybar. My config can be found [here](https://github.com/balajsra/polybar).
 
 * [Polybar DWM Module](https://github.com/mihirlad55/polybar-dwm-module)
 * [Polybar](https://github.com/polybar/polybar)
