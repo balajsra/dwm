@@ -29,6 +29,9 @@ color. The tags of the focused window are indicated with a filled square in the
 top left corner.  The tags which are applied to one or more windows are
 indicated with an empty square in the top left corner.
 .P
+The attach below patch makes newly spawned windows attach after the currently
+selected window
+.P
 dwm draws a small border around windows to indicate the focus state.
 .SH OPTIONS
 .TP
@@ -122,14 +125,17 @@ Toggle focused window between tiled and floating state.
 .B Mod1\-Shift\-f
 Toggle fullscreen (actualfullscreen patch).
 .TP
+.B Mod1\-Shift\-tab
+Toggle attach below (attachbelow patch).
+.TP
 .B Mod1\-Tab
 Toggles to the previously selected tags.
 .TP
 .B Mod1\-Shift\-j
-Increase window size while maintaining aspect ratio.
+Increase window size while maintaining aspect ratio (aspectresize patch).
 .TP
 .B Mod1\-Shift\-k
-Decrease window size while maintaining aspect ratio.
+Decrease window size while maintaining aspect ratio (aspectresize patch).
 .TP
 .B Mod1\-Shift\-[1..n]
 Apply nth tag to focused window.

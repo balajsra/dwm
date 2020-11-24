@@ -59,4 +59,5 @@ Most patches can be found on the suckless website: [https://dwm.suckless.org/pat
 * [alwaysfullscreen](https://dwm.suckless.org/patches/alwaysfullscreen/) - Do not allow the focus to drift from the active fullscreen client when using focusstack()
 * [anybar](https://github.com/mihirlad55/dwm-anybar) (Polybar Tray Fix Version) - Enables dwm to manage external status bars such as lemonbar and polybar
 * [aspectresize](https://dwm.suckless.org/patches/aspectresize/) - Allows you to resize a window while maintaining aspect ratio
+* [attachbelow](https://dwm.suckless.org/patches/attachbelow/) (Toggleable) - Make new clients attach below the selected client, instead of always becoming the new master
 * [fixborders](https://dwm.suckless.org/patches/alpha/) - Make borders opaque
