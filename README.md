@@ -68,9 +68,16 @@ Most patches can be found on the suckless website: [https://dwm.suckless.org/pat
 * [cool autostart](https://dwm.suckless.org/patches/cool_autostart/) - Execute commands from `autostart` array in `config.h` on startup and kill processes upon dwm exit
 * [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/) - Cycle through all available layouts
 * [fixborders](https://dwm.suckless.org/patches/alpha/) - Make borders opaque
+* [ipc](https://github.com/mihirlad55/dwm-ipc) - Allows third party programs (e.g. polybar) to query window manager for information
 * [movestack](https://dwm.suckless.org/patches/movestack/) - Move clients around in the stack and swap them with the master
 * [noborder](https://dwm.suckless.org/patches/noborder/) (Floating Fix) - Remove the border when there is only one window visible
 * [swallow](https://dwm.suckless.org/patches/swallow/) - Programs opened from terminal will "swallow" the terminal
 * [unfloatvisible](https://dwm.suckless.org/patches/unfloatvisible/) - Resets `isfloating` on any visible windows that have it set
 * [xresources](https://dwm.suckless.org/patches/xresources/) - Allows dwm settings (e.g. colors) to be set in Xresources
-* [dwm-ipc](https://github.com/mihirlad55/dwm-ipc) - Allows third party programs (e.g. polybar) to query window manager for information
+
+## Polybar
+
+I am using polybar for the status bar. In dwm, this requires a modified version.
+
+* [Polybar DWM Module](https://github.com/mihirlad55/polybar-dwm-module)
+* [Polybar](https://github.com/polybar/polybar)

@@ -15,7 +15,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
 static const char *alttrayname      = "tray";    /* Polybar tray instance name */
-static const char *altbarcmd        = "$HOME/bar.sh"; /* Alternate bar launch command */
+static const char *altbarcmd        = "$HOME/.config/dwm/polybar/launch-polybar.sh"; /* Alternate bar launch command */
 static const char *fonts[]          = { "NotoSans Nerd Font:size=10" };
 static char normbgcolor[]           = "#222222"; /* background color */
 static char normbordercolor[]       = "#444444"; /* inactive window border color */
