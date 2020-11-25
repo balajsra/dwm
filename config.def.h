@@ -95,7 +95,6 @@ static const Layout layouts[] = {
 	{ "|M|",      centeredmaster },
 	{ ">M>",      centeredfloatingmaster },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ NULL,       NULL },
 };
 
 /* key definitions */
@@ -118,13 +117,12 @@ static const char *termcmd[]			= { "alacritty", NULL };
 static const char *upvolcmd[]			= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%",     NULL };
 static const char *downvolcmd[]			= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%",     NULL };
 static const char *mutevolcmd[]			= { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
-static const char *brightness_up[]		= { "xbacklight", "-inc", "1", NULL };
-static const char *brightness_down[]	= { "xbacklight", "-dec", "1", NULL };
 static const char *playerplaypausecmd[]	= { "playerctl", "--player=playerctld", "play-pause", NULL };
 static const char *playernextcmd[]		= { "playerctl", "--player=playerctld", "next", 	  NULL };
 static const char *playerprevcmd[]		= { "playerctl", "--player=playerctld", "previous",   NULL };
 static const char *playershiftcmd[]     = { "playerctld", "shift", NULL};
 static const char *flameshotcmd[]		= { "flameshot",  "gui",   NULL };
+static const char *quitcmd[]            = { "pkill",      "dwm",   NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -164,8 +162,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_k,                       focusstack,           {.i = -1 } },
 	{ MODKEY,                       XK_i,                       incnmaster,           {.i = +1 } },
 	{ MODKEY,                       XK_d,                       incnmaster,           {.i = -1 } },
-	{ MODKEY|ControlMask,           XK_j,                       movestack,            {.i = +1 } },
-	{ MODKEY|ControlMask,           XK_k,                       movestack,            {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,                       movestack,            {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,                       movestack,            {.i = -1 } },
 	{ MODKEY,                       XK_h,                       setmfact,             {.f = -0.05} },
 	{ MODKEY,                       XK_l,                       setmfact,             {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_h,                       setcfact,             {.f = +0.25} },
@@ -189,22 +187,26 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_0,                       togglegaps,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_0,                       defaultgaps,          {0} },
 	{ MODKEY,                       XK_Tab,                     comboview,            {0} },
-	{ MODKEY|ShiftMask,             XK_j,                       aspectresize,         {.i = +24} },
-	{ MODKEY|ShiftMask,             XK_k,                       aspectresize,         {.i = -24} },
+	{ MODKEY|ControlMask,           XK_j,                       aspectresize,         {.i = +24} },
+	{ MODKEY|ControlMask,           XK_k,                       aspectresize,         {.i = -24} },
 	{ MODKEY|ShiftMask,             XK_c,                       killclient,           {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_c,                       spawn,                SHCMD("kill -SEGV ""\"$(xprop | grep PID| awk '{print $3}')""\"") },
 	{ MODKEY,                       XK_t,                       setlayout,            {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_t,                       unfloatvisible,       {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,                       setlayout,            {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             XK_f,                       unfloatvisible,       {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,                       setlayout,            {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_m,                       unfloatvisible,       {.v = &layouts[2]} },
+	{ MODKEY,                       XK_m,                       setlayout,            {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_m,                       unfloatvisible,       {.v = &layouts[1]} },
+	{ MODKEY,                       XK_g,                       setlayout,            {.v = &layouts[7]} },
+	{ MODKEY|ShiftMask,             XK_g,                       unfloatvisible,       {.v = &layouts[7]} },
+	{ MODKEY,                       XK_u,                       setlayout,            {.v = &layouts[11]} },
+	{ MODKEY|ShiftMask,             XK_u,                       unfloatvisible,       {.v = &layouts[11]} },
+	{ MODKEY,                       XK_f,                       setlayout,            {.v = &layouts[13]} },
 	{ MODKEY|ControlMask,		    XK_comma,                   cyclelayout,          {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period,                  cyclelayout,          {.i = +1 } },
 	{ MODKEY,                       XK_space,                   setlayout,            {0} },
 	{ MODKEY|ShiftMask,             XK_space,                   unfloatvisible,       {0} },
 	{ MODKEY|ControlMask,           XK_space,                   togglefloating,       {0} },
 	{ MODKEY|ShiftMask,             XK_f,                       togglefullscr,        {0} },
-	{ MODKEY,                       XK_Tab,                     toggleAttachBelow,    {0} },
+	{ MODKEY|ShiftMask,             XK_Tab,                     toggleAttachBelow,    {0} },
 	{ MODKEY,                       XK_0,                       comboview,            {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,                       combotag,             {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,                   focusmon,             {.i = -1 } },
@@ -215,8 +217,6 @@ static Key keys[] = {
 	{ 0,							XF86XK_AudioLowerVolume,	spawn,			      {.v = downvolcmd} },
 	{ 0,                			XF86XK_AudioMute,			spawn,			      {.v = mutevolcmd} },
 	{ 0,                			XF86XK_AudioRaiseVolume,	spawn,			      {.v = upvolcmd} },
-	{ 0, 							XF86XK_MonBrightnessUp,		spawn,			      {.v = brightness_up} },
-	{ 0, 							XF86XK_MonBrightnessDown,	spawn,			      {.v = brightness_down} },
 	{ 0,							XF86XK_AudioPlay,			spawn,			      {.v = playerplaypausecmd} },
 	{ 0,							XF86XK_AudioNext,			spawn,			      {.v = playernextcmd} },
 	{ 0,							XF86XK_AudioPrev,			spawn,			      {.v = playerprevcmd} },
@@ -230,7 +230,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                            6)
 	TAGKEYS(                        XK_8,                            7)
 	TAGKEYS(                        XK_9,                            8)
-	{ MODKEY|ControlMask|ShiftMask, XK_q,                       quit,                 {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_q,                       spawn,                {.v = quitcmd} },
 };
 
 /* button definitions */
