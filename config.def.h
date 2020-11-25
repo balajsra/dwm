@@ -57,7 +57,7 @@ static const char *const autostart[] = {
 };
 
 /* tagging */
-static const char *tags[] = { " ₁", "龎 ₂", " ₃", " ₄", "爵 ₅", " ₆", " ₇", " ₈", " ₉" };
+static const char *tags[] = { " ₁", "龎 ₂", " ₃", " ₄", "爵 ₅", " ₆", " ₇", " ₈", " ₉" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -123,7 +123,8 @@ static const char *brightness_down[]	= { "xbacklight", "-dec", "1", NULL };
 static const char *playerplaypausecmd[]	= { "playerctl", "--player=playerctld", "play-pause", NULL };
 static const char *playernextcmd[]		= { "playerctl", "--player=playerctld", "next", 	  NULL };
 static const char *playerprevcmd[]		= { "playerctl", "--player=playerctld", "previous",   NULL };
-static const char *flameshotcmd[]		= { "flameshot", "gui",	NULL };
+static const char *playershiftcmd[]     = { "playerctld", "shift", NULL};
+static const char *flameshotcmd[]		= { "flameshot",  "gui",   NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -206,6 +207,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,                  focusmon,             {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                   tagmon,               {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,                  tagmon,               {.i = +1 } },
+	{ MODKEY|ControlMask|ShiftMask, XK_Tab,                     spawn,                {.v = playershiftcmd} },
 	{ 0,							XF86XK_AudioLowerVolume,	spawn,			      {.v = downvolcmd} },
 	{ 0,                			XF86XK_AudioMute,			spawn,			      {.v = mutevolcmd} },
 	{ 0,                			XF86XK_AudioRaiseVolume,	spawn,			      {.v = upvolcmd} },
