@@ -121,9 +121,8 @@ static const char *playernextcmd[]		= { "playerctl", "--player=playerctld", "nex
 static const char *playerprevcmd[]		= { "playerctl", "--player=playerctld", "previous",   NULL };
 static const char *playershiftcmd[]     = { "playerctld", "shift", NULL};
 static const char *flameshotcmd[]		= { "flameshot",  "gui",   NULL };
-static const char *noticentercmd[]      = { "kill", "-s", "USR1", "$(pidof", "deadd-notification-center)", NULL };
-static const char *notipausecmd[]       = { "notify-send.py", "a", "--hint", "boolean:deadd-notification-center:true", "string:type:pausePopups", NULL };
-static const char *notiunpausecmd[]     = { "notify-send.py", "a", "--hint", "boolean:deadd-notification-center:true", "string:type:unpausePopups", NULL };
+static const char *noticentercmd[]      = { "/bin/bash", "/home/sravan/.config/deadd/open-notification-center.sh",  NULL };
+static const char *notitogglecmd[]      = { "/bin/bash", "/home/sravan/.config/deadd/deadd-notification-toggle.sh", NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -159,8 +158,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_s,	                    spawn,                {.v = sleepcmd} },
 	{ MODKEY|ShiftMask,				XK_Return,                  spawn,                {.v = termcmd} },
 	{ MODKEY,                       XK_n,                       spawn,                {.v = noticentercmd} },
-	{ MODKEY|ShiftMask,             XK_n,                       spawn,                {.v = notipausecmd} },
-	{ MODKEY|ControlMask,           XK_n,                       spawn,                {.v = notiunpausecmd} },
+	{ MODKEY|ShiftMask,             XK_n,                       spawn,                {.v = notitogglecmd} },
 	{ MODKEY,                       XK_b,                       togglebar,            {0} },
 	{ MODKEY,                       XK_j,                       focusstack,           {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,           {.i = -1 } },
