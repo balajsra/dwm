@@ -33,6 +33,7 @@ static const char *const autostart[] = {
 	// System Restore Processes
     "bash", "/home/sravan/.screenlayout/default-screen-layout.sh", NULL, // Restore default screen layout
     "nitrogen", "--restore", NULL,                                       // Restore wallpaper
+	"numlockx", "on", NULL,                                              // NumLock on by default
     // System Tray Applications
     "volctl", NULL,                                                      // PulseAudio Volume Control
     "nyrna", NULL,                                                       // Nyrna Application Suspend
