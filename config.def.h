@@ -43,8 +43,8 @@ static const char *const autostart[] = {
 	"xfce4-power-manager", NULL,                                         // XFCE4 Power Manager
     // Background Processes
     "picom", "--experimental-backend", "--config", "/home/sravan/.config/picom/picom.conf", NULL,  // Picom Compositor
-    "/usr/lib/xfce4/notifyd/xfce4-notifyd", NULL,                        // Xfce Notification Daemon
-    "greenclip", "daemon", NULL,                                         // Greenclip Clipboard Manager
+    "deadd-notification-center", NULL,                                   // Deadd Notification Center
+	"greenclip", "daemon", NULL,                                         // Greenclip Clipboard Manager
     "redshift", "-x", NULL,                                              // Reset redshift display gamma
     "redshift-gtk", NULL,                                                // Redshift Blue Light Filter
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,   // GNOME Polkit Authentication Agent
@@ -121,7 +121,9 @@ static const char *playernextcmd[]		= { "playerctl", "--player=playerctld", "nex
 static const char *playerprevcmd[]		= { "playerctl", "--player=playerctld", "previous",   NULL };
 static const char *playershiftcmd[]     = { "playerctld", "shift", NULL};
 static const char *flameshotcmd[]		= { "flameshot",  "gui",   NULL };
-static const char *quitcmd[]            = { "pkill",      "dwm",   NULL };
+static const char *noticentercmd[]      = { "kill", "-s", "USR1", "$(pidof", "deadd-notification-center)", NULL };
+static const char *notipausecmd[]       = { "notify-send.py", "a", "--hint", "boolean:deadd-notification-center:true", "string:type:pausePopups", NULL };
+static const char *notiunpausecmd[]     = { "notify-send.py", "a", "--hint", "boolean:deadd-notification-center:true", "string:type:unpausePopups", NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -156,6 +158,9 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_l,	                    spawn,                {.v = lockcmd} },
 	{ MODKEY|ControlMask|ShiftMask, XK_s,	                    spawn,                {.v = sleepcmd} },
 	{ MODKEY|ShiftMask,				XK_Return,                  spawn,                {.v = termcmd} },
+	{ MODKEY,                       XK_n,                       spawn,                {.v = noticentercmd} },
+	{ MODKEY|ShiftMask,             XK_n,                       spawn,                {.v = notipausecmd} },
+	{ MODKEY|ControlMask,           XK_n,                       spawn,                {.v = notiunpausecmd} },
 	{ MODKEY,                       XK_b,                       togglebar,            {0} },
 	{ MODKEY,                       XK_j,                       focusstack,           {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,           {.i = -1 } },
@@ -229,7 +234,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                            6)
 	TAGKEYS(                        XK_8,                            7)
 	TAGKEYS(                        XK_9,                            8)
-	{ MODKEY|ControlMask|ShiftMask, XK_q,                       spawn,                {.v = quitcmd} },
+	{ MODKEY|ControlMask|ShiftMask, XK_q,                       quit,                 {0} },
 };
 
 /* button definitions */
