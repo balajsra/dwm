@@ -51,7 +51,7 @@ static const char *const autostart[] = {
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,   // GNOME Polkit Authentication Agent
     // Hardware Driver Applications
     "solaar", "--window=hide", NULL,                                     // Logitech Mouse Driver
-    "polychromatic-tray-applet", NULL,                                   // Razer Keyboard Customization
+    "openrgb", "--startminimized", NULL,                                 // OpenRGB
     "optimus-manager-qt", NULL,                                          // Optimus Manager Qt
 	NULL /* terminate */
 };
