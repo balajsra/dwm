@@ -68,6 +68,7 @@ Most patches can be found on the suckless website: [https://dwm.suckless.org/pat
 * [combo](https://dwm.suckless.org/patches/combo/) - Select multiple tags for tag or view by pressing all the right keys as a combo
 * [cool autostart](https://dwm.suckless.org/patches/cool_autostart/) - Execute commands from `autostart` array in `config.h` on startup and kill processes upon dwm exit
 * [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/) - Cycle through all available layouts
+* [dwmc](https://dwm.suckless.org/patches/dwmc/) - Simple dwmc client using a fork of [fsignal](https://dwm.suckless.org/patches/fsignal/) to communicate with dwm
 * [fixborders](https://dwm.suckless.org/patches/alpha/) - Make borders opaque
 * [ipc](https://github.com/mihirlad55/dwm-ipc) - Allows third party programs (e.g. polybar) to query window manager for information
 * [movestack](https://dwm.suckless.org/patches/movestack/) - Move clients around in the stack and swap them with the master
