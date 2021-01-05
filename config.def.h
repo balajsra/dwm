@@ -66,7 +66,7 @@ static const Rule rules[] = {
 	 */
 	/* class       instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ NULL,        NULL,     "Origin",       0,         1,          0,           0,        -1 },
-	{ "Alacritty", NULL,     NULL,           0,         0,          0,           1,        -1 },
+	{ "kitty",     NULL,     NULL,           0,         0,          0,           1,        -1 },
 	{ NULL,        NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
@@ -113,7 +113,7 @@ static const char *rofiruncmd[]			= { "rofi", "-show", "drun",	  NULL };
 static const char *roficlipcmd[]		= { "rofi", "-show", "clipboard", NULL };
 static const char *lockcmd[]			= { "slock",     NULL };
 static const char *sleepcmd[]			= { "systemctl", "suspend", NULL };
-static const char *termcmd[]			= { "alacritty", NULL };
+static const char *termcmd[]			= { "kitty", NULL };
 static const char *upvolcmd[]			= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%",     NULL };
 static const char *downvolcmd[]			= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%",     NULL };
 static const char *mutevolcmd[]			= { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
