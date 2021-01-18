@@ -43,7 +43,7 @@ static const char *const autostart[] = {
     "flameshot", NULL,                                                   // Flameshot Screenshot Tool
 	"xfce4-power-manager", NULL,                                         // XFCE4 Power Manager
     // Background Processes
-    "picom", "--experimental-backend", "--config", "/home/sravan/.config/picom/picom.conf", NULL,  // Picom Compositor
+    "bash", "/home/sravan/.config/picom/toggle_picom.sh", NULL,			 // Picom Compositor
     "deadd-notification-center", NULL,                                   // Deadd Notification Center
 	"greenclip", "daemon", NULL,                                         // Greenclip Clipboard Manager
     "redshift", "-x", NULL,                                              // Reset redshift display gamma
@@ -109,21 +109,22 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *rofiruncmd[]			= { "rofi", "-show", "drun",	  NULL };
-static const char *roficlipcmd[]		= { "rofi", "-show", "clipboard", NULL };
-static const char *lockcmd[]			= { "slock",     NULL };
-static const char *sleepcmd[]			= { "systemctl", "suspend", NULL };
-static const char *termcmd[]			= { "kitty", NULL };
-static const char *upvolcmd[]			= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%",     NULL };
-static const char *downvolcmd[]			= { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%",     NULL };
-static const char *mutevolcmd[]			= { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
-static const char *playerplaypausecmd[]	= { "playerctl", "--player=playerctld", "play-pause", NULL };
-static const char *playernextcmd[]		= { "playerctl", "--player=playerctld", "next", 	  NULL };
-static const char *playerprevcmd[]		= { "playerctl", "--player=playerctld", "previous",   NULL };
-static const char *playershiftcmd[]     = { "playerctld", "shift", NULL};
-static const char *flameshotcmd[]		= { "flameshot",  "gui",   NULL };
-static const char *noticentercmd[]      = { "/bin/bash", "/home/sravan/.config/deadd/open-notification-center.sh",  NULL };
-static const char *notitogglecmd[]      = { "/bin/bash", "/home/sravan/.config/deadd/deadd-notification-toggle.sh", NULL };
+static const char *rofiruncmd[]			 = { "rofi", "-show", "drun",	  NULL };
+static const char *roficlipcmd[]		 = { "rofi", "-show", "clipboard", NULL };
+static const char *lockcmd[]			 = { "slock",     NULL };
+static const char *sleepcmd[]			 = { "systemctl", "suspend", NULL };
+static const char *termcmd[]			 = { "kitty", NULL };
+static const char *upvolcmd[]			 = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%",     NULL };
+static const char *downvolcmd[]			 = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%",     NULL };
+static const char *mutevolcmd[]			 = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
+static const char *playerplaypausecmd[]	 = { "playerctl", "--player=playerctld", "play-pause", NULL };
+static const char *playernextcmd[]		 = { "playerctl", "--player=playerctld", "next", 	  NULL };
+static const char *playerprevcmd[]		 = { "playerctl", "--player=playerctld", "previous",   NULL };
+static const char *playershiftcmd[]      = { "playerctld", "shift", NULL};
+static const char *flameshotcmd[]		 = { "flameshot",  "gui",   NULL };
+static const char *noticentercmd[]       = { "/bin/bash", "/home/sravan/.config/deadd/open-notification-center.sh",  NULL };
+static const char *notitogglecmd[]       = { "/bin/bash", "/home/sravan/.config/deadd/deadd-notification-toggle.sh", NULL };
+static const char *compositortogglecmd[] = { "/bin/bash", "/home/sravan/.config/picom/toggle_picom.sh", NULL, };
 
 /*
  * Xresources preferences to load at startup
@@ -160,6 +161,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_Return,                  spawn,                {.v = termcmd} },
 	{ MODKEY,                       XK_n,                       spawn,                {.v = noticentercmd} },
 	{ MODKEY|ShiftMask,             XK_n,                       spawn,                {.v = notitogglecmd} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Escape,                  spawn,                {.v = compositortogglecmd} },
 	{ MODKEY,                       XK_b,                       togglebar,            {0} },
 	{ MODKEY,                       XK_j,                       focusstack,           {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,           {.i = -1 } },
