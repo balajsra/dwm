@@ -49,7 +49,8 @@ static const char *const autostart[] = {
     "redshift", "-x", NULL,                                              // Reset redshift display gamma
     "redshift-gtk", NULL,                                                // Redshift Blue Light Filter
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,   // GNOME Polkit Authentication Agent
-    // Hardware Driver Applications
+    "xss-lock", "-l", "--", "multilockscreen", "--lock", NULL,           // Session lock handler
+	// Hardware Driver Applications
     "solaar", "--window=hide", NULL,                                     // Logitech Mouse Driver
     "openrgb", "--startminimized", NULL,                                 // OpenRGB
     "optimus-manager-qt", NULL,                                          // Optimus Manager Qt
@@ -111,7 +112,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *rofiruncmd[]			 = { "rofi", "-show", "drun",	  NULL };
 static const char *roficlipcmd[]		 = { "rofi", "-show", "clipboard", NULL };
-static const char *lockcmd[]			 = { "slock",     NULL };
+static const char *lockcmd[]			 = { "loginctl", "lock-session", NULL };
 static const char *sleepcmd[]			 = { "systemctl", "suspend", NULL };
 static const char *termcmd[]			 = { "kitty", NULL };
 static const char *upvolcmd[]			 = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%",     NULL };
