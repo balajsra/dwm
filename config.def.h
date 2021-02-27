@@ -44,7 +44,7 @@ static const char *const autostart[] = {
 	"xfce4-power-manager", NULL,                                         // XFCE4 Power Manager
     // Background Processes
     "bash", "/home/sravan/.config/picom/toggle_picom.sh", NULL,			 // Picom Compositor
-    "deadd-notification-center", NULL,                                   // Deadd Notification Center
+    "bash", "/home/sravan/.config/dunst/launch_dunst.sh", NULL,          // Dunst Notification Daemon
 	"greenclip", "daemon", NULL,                                         // Greenclip Clipboard Manager
     "redshift", "-x", NULL,                                              // Reset redshift display gamma
     "redshift-gtk", NULL,                                                // Redshift Blue Light Filter
@@ -123,8 +123,10 @@ static const char *playernextcmd[]		 = { "playerctl", "--player=playerctld", "ne
 static const char *playerprevcmd[]		 = { "playerctl", "--player=playerctld", "previous",   NULL };
 static const char *playershiftcmd[]      = { "playerctld", "shift", NULL};
 static const char *flameshotcmd[]		 = { "flameshot",  "gui",   NULL };
-static const char *noticentercmd[]       = { "/bin/bash", "/home/sravan/.config/deadd/open-notification-center.sh",  NULL };
-static const char *notitogglecmd[]       = { "/bin/bash", "/home/sravan/.config/deadd/deadd-notification-toggle.sh", NULL };
+static const char *notifycontextcmd[]    = { "dunstctl", "context", NULL };
+static const char *notifyhistorycmd[]    = { "dunstctl", "history-pop", NULL };
+static const char *notifyclosecmd[]      = { "dunstctl", "close", NULL };
+static const char *notifytogglecmd[]     = { "dunstctl", "set-paused", "toggle", NULL };
 static const char *compositortogglecmd[] = { "/bin/bash", "/home/sravan/.config/picom/toggle_picom.sh", NULL, };
 
 /*
@@ -160,8 +162,10 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_l,	                    spawn,                {.v = lockcmd} },
 	{ MODKEY|ControlMask|ShiftMask, XK_s,	                    spawn,                {.v = sleepcmd} },
 	{ MODKEY|ShiftMask,				XK_Return,                  spawn,                {.v = termcmd} },
-	{ MODKEY,                       XK_n,                       spawn,                {.v = noticentercmd} },
-	{ MODKEY|ShiftMask,             XK_n,                       spawn,                {.v = notitogglecmd} },
+	{ MODKEY,                       XK_n,                       spawn,                {.v = notifycontextcmd} },
+	{ MODKEY|ShiftMask,             XK_n,                       spawn,                {.v = notifyhistorycmd} },
+	{ MODKEY|ControlMask,           XK_n,                       spawn,                {.v = notifyclosecmd} },
+	{ MODKEY|ControlMask|ShiftMask, XK_n,                       spawn,                {.v = notifytogglecmd} },
 	{ MODKEY|ControlMask|ShiftMask, XK_Escape,                  spawn,                {.v = compositortogglecmd} },
 	{ MODKEY,                       XK_b,                       togglebar,            {0} },
 	{ MODKEY,                       XK_j,                       focusstack,           {.i = +1 } },
